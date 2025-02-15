@@ -16,7 +16,11 @@ For example, in the `embeddings.csv.example` file you can see if the embedding q
 
 If they match `goodbye`'s embedding with their query then they will be sent to `/logout.php`.
 
+A search for `Where is the github page`:
+![Embedding query for 'where is the github page?'](https://github.com/Jay4242/embedding-links/blob/128f7b5553942ac56f407f198d1940bc89e71a35/query.png)
 
+Results in `/foo/github/`
+![User is redirected to /foo/github/](https://github.com/Jay4242/embedding-links/blob/128f7b5553942ac56f407f198d1940bc89e71a35/path.png)
 
 Currently, the `path-to-follow` needs to be edited after creating the embeddings CSV file.
 
