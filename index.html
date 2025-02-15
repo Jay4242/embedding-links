@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embedding Links</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(event) {
+                event.preventDefault();
+                var searchPhrase = $('#search_phrase').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'index.php',
+                    data: { search_phrase: searchPhrase },
+                    success: function(response) {
+                        window.location.href = response; // Redirect to the URL path provided by the server
+                    },
+                    error: function() {
+                        $('#results').html('<pre>Error processing request</pre>');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form method="post">
+        <label for="search_phrase">Search Phrase:</label>
+        <input type="text" id="search_phrase" name="search_phrase" required>
+        <input type="submit" value="Search">
+    </form>
+    <div id="results"></div>
+</body>
+</html>
